@@ -36,7 +36,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
             @foreach($products as $product)
                 <div class="bg-white p-4 border rounded-lg shadow-md">
-                    <img src="{{ Storage::url($product->foto) }}" class="w-full h-48 object-cover rounded-md mb-4" />
+                    <img src="{{ Storage::url($product->foto) }} ?? '/noimage.png" class="w-full h-48 object-cover rounded-md mb-4" />
                     <div class="my-2">
                         <p class="font-light text-lg">{{ $product->nama }}</p>
                         <p class="text-gray-500">Rp. {{ number_format($product->harga) }}</p>
