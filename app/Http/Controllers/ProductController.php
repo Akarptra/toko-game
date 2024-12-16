@@ -49,7 +49,7 @@ class ProductController extends Controller
     
         // Upload gambar
         $foto = $request->file('foto');
-        $fotoPath = $foto->store('image/products');
+        $fotoPath = $foto->store('image/products', 's3');
     
         // Simpan data ke database
         Product::create([
@@ -88,13 +88,13 @@ public function update(Request $request, Product $product)
         // Hapus foto lama jika ada
         if ($product->foto) {
             if($product->foto !== "noimage.png"){
-                Storage::disk('local')->delete('public/' . $product->foto);
+                Storage::disk('s3')->delete($product->foto);
             }
         }
 
         // Upload foto baru
         $foto = $request->file('foto');
-        $fotoPath = $foto->store('image/products'); // Simpan foto baru
+        $fotoPath = $foto->store('image/products', 's3'); // Simpan foto baru ke AWS S3
 
         // Update foto di database
         $product->foto = $fotoPath;
