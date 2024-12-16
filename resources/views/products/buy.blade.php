@@ -3,9 +3,9 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="flex mt-6 mb-6 items-center justify-between">
-            <h2 class="font-semibold text-xl">Information Game</h2>
+            <h2 class="fon  t-semibold text-xl">Information Game</h2>
         </div>
-        <div class="mt-4" x-data="{ imageUrl: '{{ Storage::url($product->foto) ?? '/noimage.png' }}' }">
+        <div class="mt-4" x-data="{ }">
             <div class="flex gap-8">
                 <div class="w-1/2">
                     <img :src="{{ Storage::url($product->foto)}}" class="rounded-md" alt="Product Image" />
