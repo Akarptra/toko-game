@@ -56,7 +56,7 @@ class ProductController extends Controller
             $imagePath = $file->storeAs('image/products', $fileName, env('FILESYSTEM_DISK', 's3'));
         }
         
-       
+            
         // Simpan data ke database
         Product::create([
             'nama' => $request->nama,

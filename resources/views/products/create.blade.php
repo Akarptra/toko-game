@@ -6,7 +6,7 @@
         <div class="flex mt-6 mb-6 items-center justify-between">
             <h2 class="font-semibold text-xl">Add Product</h2>
         </div>
-        <div class="mt-4" x-data="{ imageUrl: '/storage/noimage.png' }">
+        <div class="mt-4" x-data="{ imageUrl: '/noimage.png' }">
             <form enctype="multipart/form-data" method="post" action="{{ route('products.store') }}" class="flex gap-8">
                 @csrf
 
@@ -17,7 +17,7 @@
                 <!-- foto -->
                 <div>
                     <x-input-label for="foto" :value="__('Photo')" />
-                    <x-text-input accept="image/*" id="foto" class="block mt-1 w-full border p-2" type="file" name="foto" :value="old('foto')" required 
+                    <x-text-input accept="jpg.jpeg.png" id="foto" class="block mt-1 w-full border p-2" type="file" name="foto" :value="old('foto')" required 
                     @change="imageUrl = URL.createObjectURL($event.target.files[0])"/>
                     <x-input-error :messages="$errors->get('foto')" class="mt-2" />
                 </div>
