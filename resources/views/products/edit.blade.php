@@ -6,7 +6,7 @@
             <h2 class="font-semibold text-xl">Edit Product</h2>
             @include('products.partials.delete-product')
         </div>
-        <div class="mt-4" x-data="{ imageUrl: '/storage/{{ $product->foto }}' }">
+        <div class="mt-4" x-data="{ imageUrl: '/noimage.png' }">
             <form enctype="multipart/form-data" method="post" action="{{ route('products.update', $product) }}" class="flex gap-8">
                 @csrf
                 @method('PUT')
