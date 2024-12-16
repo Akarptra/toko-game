@@ -144,6 +144,7 @@ public function destroy(Product $product){
     
     public function showBuyPage(Product $product)
     {
+        
         return view('buy', compact('product'));
     }
 

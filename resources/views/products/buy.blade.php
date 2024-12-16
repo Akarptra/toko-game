@@ -8,9 +8,9 @@
         <div class="mt-4" x-data="{ imageUrl: '{{ Storage::url($product->foto) ?? '/noimage.png' }}' }">
             <div class="flex gap-8">
                 <div class="w-1/2">
-                    <img :src="{{ Storage::url($product->foto)}}" class="rounded-md" alt="Product Image" />
+                    <p>{{ $product->foto }}</p>
+                    <img :src="imageUrl" class="rounded-md" alt="Product Image" />
                 </div>
-
                 <div class="w-1/2">
                     <!-- Nama -->
                     <div>
