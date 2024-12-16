@@ -5,7 +5,7 @@
         <div class="flex mt-6 mb-6 items-center justify-between">
             <h2 class="font-semibold text-xl">Information Game</h2>
         </div>
-        <div class="mt-4" x-data="{ imageUrl: '/storage/{{ $product->foto }}', showModal: false }">
+        <div class="mt-4" x-data="{ imageUrl:  Storage::url($product->foto) ?? '/noimage.png' , showModal: false }">
             <div class="flex gap-8">
                 <div class="w-1/2">
                     <img :src="imageUrl" class="rounded-md" alt="Product Image" />
