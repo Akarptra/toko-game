@@ -48,15 +48,21 @@ class ProductController extends Controller
         ]);
     
         // Upload gambar
-        $foto = $request->file('foto');
-        $fotoPath = $foto->store('image/products', 's3');
-    
+
+        $imagePath = null;
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $imagePath = $file->storeAs('image/products', $fileName, env('FILESYSTEM_DISK', 's3'));
+        }
+        
+       
         // Simpan data ke database
         Product::create([
             'nama' => $request->nama,
             'harga' => str_replace(".", "", $request->harga),
             'deskripsi' => $request->deskripsi,
-            'foto' => $fotoPath,
+            'foto' => $imagePath,
         ]);
     
         return redirect()->route('products.index')->with('success', 'Produk berhasil ditambahkan');
