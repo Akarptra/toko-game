@@ -13,7 +13,7 @@
 
                 <div class="w-1/2">
                     <!-- Menampilkan gambar yang ada jika ada -->
-                    <img :src="imageUrl" class="rounded-md" alt="Product Image" />
+                    <img :src="{{ Storage::url($product->foto) }}" class="rounded-md" alt="Product Image" />
 
                 </div>
                 <div class="w-1/2">
