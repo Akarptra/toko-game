@@ -6,15 +6,14 @@
             <h2 class="font-semibold text-xl">Edit Product</h2>
             @include('products.partials.delete-product')
         </div>
-        <div class="mt-4" x-data="{ imageUrl: '/noimage.png' }">
+        <div class="mt-4" x-data="{ imageUrl: '{{ Storage::url($product->foto) ?? '/noimage.png' }}' }">
             <form enctype="multipart/form-data" method="post" action="{{ route('products.update', $product) }}" class="flex gap-8">
                 @csrf
                 @method('PUT')
 
                 <div class="w-1/2">
                     <!-- Menampilkan gambar yang ada jika ada -->
-                    <img :src="{{ Storage::url($product->foto) ?? '/noimage.png' }}" class="rounded-md" alt="Product Image" />
-
+                    <img :src="imageUrl" class="rounded-md" alt="Product Image" />
                 </div>
                 <div class="w-1/2">
                     <!-- Foto -->
