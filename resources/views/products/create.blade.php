@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 
 
 <x-app-layout>
@@ -51,4 +51,3 @@
         </div>
     </div>
 </x-app-layout>
-</script>
