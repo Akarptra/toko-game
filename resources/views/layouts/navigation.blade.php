@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{ url('logo.png') }}" class="h-8"/>
+                        <img src="{{ url('logo1.png') }}" class="h-8"/>
                     </a>
                 </div>
 
